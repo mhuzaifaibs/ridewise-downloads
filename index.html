@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RideWise for Android</title>
+  <meta name="description" content="Download RideWise: fuel, service, documents and inspections for your bike or car.">
+  <link rel="icon" href="icon.png">
+  <style>
+    :root {
+      --bg: #f5f7f8; --surface: #ffffff; --ink: #0b0f14; --muted: #55606c;
+      --line: #dfe5ea; --accent: #127a6c; --accent-ink: #ffffff; --soft: #e3f4f1;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0b0f14; --surface: #151b23; --ink: #f2f5f7; --muted: #9aa6b2;
+        --line: #26303b; --accent: #38cab3; --accent-ink: #0b0f14; --soft: #12302c;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0b0f14; --surface: #151b23; --ink: #f2f5f7; --muted: #9aa6b2;
+      --line: #26303b; --accent: #38cab3; --accent-ink: #0b0f14; --soft: #12302c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 640px; margin: 0 auto; padding: 32px 16px 48px; }
+    header { display: flex; gap: 16px; align-items: center; }
+    header img { width: 72px; height: 72px; border-radius: 18px; }
+    h1 { font-size: 1.9rem; margin: 0; line-height: 1.15; }
+    .tagline { margin: 2px 0 0; color: var(--muted); }
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 16px; padding: 20px; margin-top: 20px;
+    }
+    .version { color: var(--muted); font-size: .92rem; margin: 0 0 14px; }
+    .version strong { color: var(--ink); }
+    .notes { margin: -6px 0 16px; }
+    .download {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; min-height: 56px; padding: 12px 18px; border-radius: 14px;
+      background: var(--accent); color: var(--accent-ink); text-decoration: none;
+      font-weight: 700; font-size: 1.1rem;
+    }
+    .download:focus-visible, a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .older { display: block; margin-top: 12px; color: var(--muted); font-size: .92rem; }
+    .older a { color: var(--accent); }
+    h2 { font-size: 1.15rem; margin: 0 0 10px; }
+    ol { margin: 0; padding-left: 1.3em; }
+    ol li { margin: 6px 0; }
+    ul { margin: 0; padding-left: 1.2em; }
+    ul li { margin: 5px 0; }
+    .tip { background: var(--soft); border-radius: 12px; padding: 10px 14px; margin-top: 12px; font-size: .95rem; }
+    footer { margin-top: 28px; color: var(--muted); font-size: .85rem; }
+    footer a { color: inherit; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="RideWise logo" width="72" height="72">
+    <div>
+      <h1>RideWise</h1>
+      <p class="tagline">Fuel, service, documents and inspections for your bike or car.</p>
+    </div>
+  </header>
+
+  <section class="card" aria-labelledby="get">
+    <h2 id="get">Download for Android</h2>
+    <p class="version" id="version">Latest version</p>
+    <p class="notes" id="notes" hidden></p>
+    <a class="download" id="download"
+       href="https://github.com/mhuzaifaibs/ridewise-downloads/releases/latest">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>
+      </svg>
+      <span id="download-label">Download RideWise</span>
+    </a>
+    <span class="older" id="older" hidden>
+      Older phone, and the app will not install?
+      <a id="older-link" href="https://github.com/mhuzaifaibs/ridewise-downloads/releases/latest">Get this version instead</a>
+    </span>
+  </section>
+
+  <section class="card" aria-labelledby="install">
+    <h2 id="install">How to install</h2>
+    <ol>
+      <li>Tap <strong>Download</strong>, then open the file when it finishes.</li>
+      <li>If Android asks, allow <strong>Install unknown apps</strong> for your browser (or WhatsApp, or Files).</li>
+      <li>If Play Protect warns you, tap <strong>More details → Install anyway</strong>. RideWise is not in the Play Store, so Google has not seen it.</li>
+      <li>Open <strong>RideWise</strong> and sign up with your email.</li>
+    </ol>
+  </section>
+
+  <section class="card" aria-labelledby="updates">
+    <h2 id="updates">Updates</h2>
+    <p style="margin:0">When a new version is out, RideWise tells you on its Dashboard. Tap <strong>Update now</strong>, then <strong>Install</strong>. Your vehicles, records and photos stay.</p>
+    <p class="tip">The first time, Android asks you to allow RideWise to install updates. That is only for its own updates.</p>
+  </section>
+
+  <section class="card" aria-labelledby="data">
+    <h2 id="data">Your data</h2>
+    <ul>
+      <li>Your records are kept in your own account, and only you can see them.</li>
+      <li>Photos of documents, receipts and inspections stay on your phone.</li>
+      <li>Your location is used only when you tap <strong>My location</strong>, on the phone, and is never stored.</li>
+      <li>Saved places (Home, Work) stay on your phone.</li>
+      <li>You can delete your account and everything in it from <strong>Profile</strong>.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>For Android phones. Towns: <a href="https://www.geonames.org">GeoNames</a>, CC BY 4.0.
+      Areas: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL.</p>
+  </footer>
+</main>
+<script>
+  // The version, notes and files come from latest.json: the same file the
+  // app reads to offer an update. Without it the links still open the
+  // releases page.
+  (async () => {
+    try {
+      const response = await fetch('latest.json', { cache: 'no-store' });
+      if (!response.ok) return;
+      const latest = await response.json();
+      const mb = (bytes) => Math.round(bytes / 1048576) + ' MB';
+      const main = latest.apks && latest.apks['arm64-v8a'];
+      const older = latest.apks && latest.apks['armeabi-v7a'];
+      document.getElementById('version').innerHTML =
+        'Version <strong></strong>' + (main ? ' · ' + mb(main.bytes) : '');
+      document.querySelector('#version strong').textContent = latest.versionName;
+      if (latest.notes) {
+        const notes = document.getElementById('notes');
+        notes.textContent = latest.notes;
+        notes.hidden = false;
+      }
+      if (main) {
+        document.getElementById('download').href = main.url;
+        document.getElementById('download-label').textContent =
+          'Download RideWise ' + latest.versionName;
+      }
+      if (older) {
+        document.getElementById('older-link').href = older.url;
+        document.getElementById('older-link').textContent =
+          'Get this version instead (' + mb(older.bytes) + ')';
+        document.getElementById('older').hidden = false;
+      }
+    } catch (error) {
+      // Offline, or no latest.json yet: the static links stand.
+    }
+  })();
+</script>
+</body>
+</html>
